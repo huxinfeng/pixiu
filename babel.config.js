@@ -14,6 +14,15 @@ module.exports = api => {
   return {
     // 执行顺序由右往左,所以先处理ts,再处理jsx,最后再试一下babel转换为低版本语法
     presets: [
+      // 代码转义兼容低版本浏览器
+      [
+        '@babel/preset-env',
+        {
+          // targets: { browsers: ['> 1%', 'last 2 versions', 'not ie <= 8'] },
+          useBuiltIns: 'usage', // 根据配置的浏览器兼容,以及代码中使用到的 api 进行引入 polyfill 按需添加
+          corejs: 3, // 配置使用 core-js 使用的版本
+        },
+      ],
       // 如果使用的是 Babel 和 React 17，您可能需要将 "runtime": "automatic" 添加到配置中。
       // 否则可能会出现错误：Uncaught ReferenceError: React is not defined
       ['@babel/preset-react', { runtime: 'automatic' }],

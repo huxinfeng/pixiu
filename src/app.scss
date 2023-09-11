@@ -1,0 +1,50 @@
+$blue: #b8a609;
+$side: left;
+
+h1 {
+  color: $blue;
+}
+
+h3 {
+  color: rgb(185, 43, 43);
+}
+
+@font-face {
+  font-family: 'GoldmanBold';
+  font-weight: bold;
+
+  src: local('GoldmanBold'),
+  url('./assets/font/Phudu-Bold.ttf') format('truetype');
+}
+
+.scssBox {
+  margin: 20px 0;
+
+  .box {
+    font-family: 'GoldmanBold';
+
+    padding: calc(20px / 2);
+
+    transform: translateX(100);
+
+    color: $blue;
+    border: 1px solid grey;
+    background-color: rgb(226, 223, 223);
+
+    margin-#{$side}: 20px;
+  }
+
+  .smallImg {
+    width: 69px;
+    height: 75px;
+
+    background: url('./assets/image/5kb_img.jpeg') no-repeat;
+  }
+
+  .bigImg {
+    width: 232px;
+    height: 154px;
+
+    background: url('./assets/image/10kb_img.png') no-repeat;
+  }
+}

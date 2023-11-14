@@ -1,4 +1,4 @@
 function Demo1() {
-  return <h3>我是Demo1组件</h3>;
+  return <h3>我是Demo1组件</h3>
 }
-export default Demo1;
+export default Demo1

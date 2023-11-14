@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const LazyDemo = () => {
   useEffect(() => {
     console.log(1);
     const a = [];
     a.push(1);
-    new Promise(resove => {
+    new Promise((resove) => {
       setTimeout(() => {
         resove(121212311);
       }, 2000);
